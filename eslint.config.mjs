@@ -6,10 +6,9 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 export default defineConfig([
   eslintConfigPrettier,
   {
-    node: true,
     files: ["**/*.{js,mjs,cjs}"],
     plugins: { js },
     extends: ["js/recommended"],
-    languageOptions: { globals: globals.browser },
+    languageOptions: { globals: {...globals.browser, ...globals.node} },
   },
 ]);
